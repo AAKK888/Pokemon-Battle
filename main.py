@@ -3,17 +3,17 @@ import random
 class Char_1():
 
     def __init__(self, sp_attack, sp_defense, speed, attack, defense, max_health,
-                 level):
+                 level, name):
         self.sp_attack = sp_attack
         self.sp_defence = sp_defence
-        self.speed = speed
+    	self.speed = speed
         self.attack = attack
         self.defense = defense
         self.max_health = max_health
         self.level = level
         self.current_health = max_health
         self.is_knocked_out = False
-
+		self.name = name
     def Attack(self, oppo_defence, base):
         modifier = round(random.uniform(0.9, 1.2), 2)
         damage_done = (
