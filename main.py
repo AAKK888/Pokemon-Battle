@@ -1,4 +1,15 @@
 import random
+import pygame
+import time
+
+WIDTH = 500
+HEIGHT = 400
+
+pygame.init()
+pygame.mixer.init()
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Pokemon Battle")
+clock = pygame.time.Clock()
 
 
 class Char_1:
@@ -38,4 +49,3 @@ class Char_1:
     def knock_out(self):
         self.is_knocked_out = True
         print(self.name + "is knocked out")
-    
