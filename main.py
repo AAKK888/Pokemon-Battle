@@ -37,3 +37,5 @@ class Char_1:
 
     def knock_out(self):
         self.is_knocked_out = True
+        print(self.name + "is knocked out")
+    
