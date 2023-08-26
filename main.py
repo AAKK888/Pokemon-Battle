@@ -17,3 +17,4 @@ class Char_1():
         damage_done = (
             ((2 * self.level + 10) / 250 * self.attack / oppo_defence * base +
              2) * modifier)
+
