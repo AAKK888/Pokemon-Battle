@@ -1,51 +1,78 @@
 import random
 import pygame
 import time
+import pokemon
 
-WIDTH = 500
-HEIGHT = 400
+TITLE = "Pokemon Battle"
+WIDTH = 1520
+HEIGHT = 800
+FPS = 60
 
-pygame.init()
-pygame.mixer.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Pokemon Battle")
-clock = pygame.time.Clock()
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+YELLOW = (255, 255, 0)
 
 
-class Char_1:
+class Game:
+    def __init__(self):
+        # initialize game window, etc
+        pygame.init()
+        pygame.mixer.init()
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+        pygame.display.set_caption(TITLE)
+        self.clock = pygame.time.Clock()
+        self.running = True
 
-    def __init__(self, sp_attack, sp_defense, speed, attack, defense, max_health,
-                 level, name):
-        self.sp_attack = sp_attack
-        self.sp_defence = sp_defense
-        self.speed = speed
-        self.attack = attack
-        self.defense = defense
-        self.max_health = max_health
-        self.level = level
-        self.current_health = max_health
-        self.is_knocked_out = False
-        self.name = name
+    def new(self):
+        # start a new game
+        self.all_sprites = pygame.sprite.Group()
+        self.run()
 
-    def attack(self, oppo_defence, base):
-        modifier = round(random.uniform(0.9, 1.2), 2)
-        damage_done = (((2 * self.level + 10) / 250 * self.attack / oppo_defence * base + 2) * modifier)
-        truefalse = (True, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False,)
-        chance = random.choice(truefalse)
-        if chance:
-            damage_done *= 1.5
-        else:
-            pass
-        return damage_done
+    def run(self):
+        # Game Loop
+        self.playing = True
+        while self.playing:
+            self.clock.tick(FPS)
+            self.events()
+            self.update()
+            self.draw()
 
-    def lose_health(self, damage_taken):
-        if damage_taken > self.current_health:
-            self.current_health = 0
-            self.is_knocked_out = True
-        else:
-            self.current_health -= damage_taken
-        return self.current_health
+    def update(self):
+        # Game Loop - Update
+        self.all_sprites.update()
 
-    def knock_out(self):
-        self.is_knocked_out = True
-        print(self.name + "is knocked out")
+    def events(self):
+        # Game Loop - events
+        for event in pygame.event.get():
+            # check for closing window
+            if event.type == pygame.QUIT:
+                if self.playing:
+                    self.playing = False
+                self.running = False
+
+    def draw(self):
+        # Game Loop - draw
+        self.screen.fill(BLACK)
+        self.all_sprites.draw(self.screen)
+        # *after* drawing everything, flip the display
+        pygame.display.flip()
+
+    def show_start_screen(self):
+        # game splash/start screen
+        pass
+
+    def show_go_screen(self):
+        # game over/continue
+        pass
+
+
+g = Game()
+g.show_start_screen()
+while g.running:
+    g.new()
+    g.show_go_screen()
+
+pygame.quit()
