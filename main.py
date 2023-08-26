@@ -1,7 +1,4 @@
-import random
 import pygame
-import time
-import pokemon
 
 TITLE = "Pokemon Battle"
 WIDTH = 1520
@@ -14,6 +11,8 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
+BG_COLOR = WHITE
+FONT_NAME = "arial"
 
 
 class Game:
@@ -25,6 +24,7 @@ class Game:
         pygame.display.set_caption(TITLE)
         self.clock = pygame.time.Clock()
         self.running = True
+        self.font_name = pygame.font.match_font(FONT_NAME)
 
     def new(self):
         # start a new game
@@ -62,11 +62,42 @@ class Game:
 
     def show_start_screen(self):
         # game splash/start screen
-        pass
+        self.screen.fill(BG_COLOR)
+        self.draw_text(TITLE, 48, WHITE, WIDTH / 2, HEIGHT / 4)
+        self.draw_text("Battle with Pokemon", 22, WHITE, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("Controls are", 22, WHITE, WIDTH / 2, HEIGHT * 3 / 4)
+        self.draw_text("Press a key to play", 22, WHITE, WIDTH / 2, 15)
+        pygame.display.flip()
+        self.wait_for_key()
 
     def show_go_screen(self):
         # game over/continue
-        pass
+        if not self.running:
+            return
+        self.screen.fill(BG_COLOR)
+        self.draw_text("GAME OVER", 48, WHITE, WIDTH / 2, HEIGHT / 4)
+        self.draw_text("The Battle is over", 22, WHITE, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("Press a key to play again", 22, WHITE, WIDTH / 2, HEIGHT * 3 / 4)
+        pygame.display.flip()
+        self.wait_for_key()
+
+    def wait_for_key(self):
+        waiting = True
+        while waiting:
+            self.clock.tick(FPS)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    waiting = False
+                    self.running = False
+                if event.type == pygame.KEYUP:
+                    waiting = False
+
+    def draw_text(self, text, size, color, x, y):
+        font = pygame.font.Font(self.font_name, size)
+        text_surface = font.render(text, True, color)
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (x, y)
+        self.screen.blit(text_surface, text_rect)
 
 
 g = Game()
