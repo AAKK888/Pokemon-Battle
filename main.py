@@ -28,3 +28,6 @@ class Char_1:
             self.is_knocked_out = True
         else:
             self.current_health -= damage_taken
+
+    def knock_out(self): 
+    self.is_knocked_out = True  
