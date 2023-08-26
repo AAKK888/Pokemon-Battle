@@ -2,13 +2,13 @@ import random
 
 class Char_1():
 
-    def __init__(self, sp_attack, sp_defence, speed, attack, defence, health,
+    def __init__(self, sp_attack, sp_defense, speed, attack, defense, health,
                  level):
         self.sp_attack = sp_attack
         self.sp_defence = sp_defence
         self.speed = speed
         self.attack = attack
-        self.defence = defence
+        self.defense = defense
         self.health = health
         self.level = level
 
