@@ -9,8 +9,10 @@ class Char_1():
         self.speed = speed
         self.attack = attack
         self.defense = defense
-        self.max_health = health
+        self.max_health = max_health
         self.level = level
+        self.current_health = max_health
+        self.is_knocked_out = False
 
     def Attack(self, oppo_defence, base):
         modifier = round(random.uniform(0.9, 1.2), 2)
@@ -18,9 +20,9 @@ class Char_1():
             ((2 * self.level + 10) / 250 * self.attack / oppo_defence * base +
              2) * modifier)
 
-def lose_health(self, damage_taken):
-    if amount > self.current_health:  
-      self.current_health = 0
-      self.is_knocked_out = True 
-    else:
-      self.current_health -= amount 
+    def lose_health(self, damage_taken):
+        if amount > self.current_health:  
+          self.current_health = 0
+          self.is_knocked_out = True 
+        else:
+          self.current_health -= amount 
