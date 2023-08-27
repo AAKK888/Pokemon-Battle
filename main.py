@@ -1,4 +1,5 @@
 import pygame
+import pokemon
 
 logo = "                                  ,'\ \n" \
        "    _.----.        ____         ,'  _\   ___    ___     ____\n" \
