@@ -1,6 +1,7 @@
 import pygame
 import random
 import pokemon
+from var import *
 logo = "                                  ,'\ \n" \
        "    _.----.        ____         ,'  _\   ___    ___     ____\n" \
        "_,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.\n" \
@@ -20,13 +21,7 @@ WIDTH = 1520
 HEIGHT = 800
 FPS = 60
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-YELLOW = (255, 255, 0)
-BG_COLOR = RED
+BG_COLOR = red
 FONT_NAME = "arial"
 
 
@@ -44,33 +39,33 @@ class Game:
     def new(self):
         # start a new game
         self.screen.fill(BG_COLOR)
-        self.draw_text("These are your teams", 40, WHITE, WIDTH / 2, HEIGHT / 4)
-        self.Snorlax = pokemon.Pokemon("Snorlax", "Normal", 540, 160, 110, 65, 65, 110, 30)
-        self.Charzard = pokemon.Pokemon("Charzard", "Fire", 534, 78, 84, 78, 109, 85, 100)
-        self.Greninja = pokemon.Pokemon("Greninja", "Water", 530, 72, 123, 67, 95, 85, 95)
-        self.Electivire = pokemon.Pokemon("Electivire", "Electric", 540, 75, 123, 67, 95, 85, 95)
-        self.Sceptile = pokemon.Pokemon("Sceptile", "Grass", 530, 70, 85, 65, 105, 85, 120)
-        self.Lapras = pokemon.Pokemon("Lapras", "Ice", 535, 130, 85, 80, 85, 95, 60)
-        self.Lucario = pokemon.Pokemon("Lucario", "Fighting", 525, 70, 110, 70, 115, 70, 90)
-        self.Crobat = pokemon.Pokemon("Crobat", "Poison", 535, 85, 90, 80, 70, 80, 130)
-        self.Rhyperior = pokemon.Pokemon("Rhyperior", "Ground", 535, 115, 140, 130, 55, 55, 40)
-        self.Gyarados = pokemon.Pokemon("Gyarados", "Flying", 540, 95, 125, 79, 60, 100, 81)
-        self.Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", 528, 68, 65, 65, 125, 115, 90)
-        self.Yanmega = pokemon.Pokemon("Yanmega", "Bug", 515, 86, 76, 86, 116, 56, 95)
-        self.Probropass = pokemon.Pokemon("Probropass", "Rock", 525, 60, 55, 145, 75, 150, 40)
+        self.draw_text("These are your teams", 40, papaya_whip, WIDTH / 2, HEIGHT / 4)
+        self.Snorlax = pokemon.Pokemon("Snorlax", "Normal", 540, 160, 110, 65, 65, 110, 30, "Double_Edge", "Hyper_Beam")
+        self.Charzard = pokemon.Pokemon("Charzard", "Fire", 534, 78, 84, 78, 109, 85, 100, "Fly", "Blast_Burn")
+        self.Greninja = pokemon.Pokemon("Greninja", "Water", 530, 72, 123, 67, 95, 85, 95, "Night_Slash", "Water_Shuriken")
+        self.Electivire = pokemon.Pokemon("Electivire", "Electric", 540, 75, 123, 67, 95, 85, 95, "Iron_Tail", "Thunder")
+        self.Sceptile = pokemon.Pokemon("Sceptile", "Grass", 530, 70, 85, 65, 105, 85, 120, "Leaf_Blade", "Leaf_Storm")
+        self.Lapras = pokemon.Pokemon("Lapras", "Ice", 535, 130, 85, 80, 85, 95, 60, "Waterfall", "Blizzard")
+        self.Lucario = pokemon.Pokemon("Lucario", "Fighting", 525, 70, 110, 70, 115, 70, 90, "Close_Combat", "Flash_Cannon")
+        self.Crobat = pokemon.Pokemon("Crobat", "Poison", 535, 85, 90, 80, 70, 80, 130, "Fly", "Sludge_Bomb")
+        self.Rhyperior = pokemon.Pokemon("Rhyperior", "Ground", 535, 115, 140, 130, 55, 55, 40, "Stone_Edge", "Earth_Power")
+        self.Gyarados = pokemon.Pokemon("Gyarados", "Flying", 540, 95, 125, 79, 60, 100, 81, "Aqua_Tail", "Hurricane")
+        self.Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", 528, 68, 65, 65, 125, 115, 90, "Zenn_Headbutt", "Dazzling_Gleam")
+        self.Yanmega = pokemon.Pokemon("Yanmega", "Bug", 515, 86, 76, 86, 116, 56, 95, "Bug_Bite", "Gust")
+        self.Probropass = pokemon.Pokemon("Probropass", "Rock", 525, 60, 55, 145, 75, 150, 40, "Stone_Edge", "Flash_Cannon")
         self.Dusknoir = pokemon.Pokemon("Dusknoir", "Ghost", 525, 45, 100, 135, 65, 135, 45)
         self.Haxorus = pokemon.Pokemon("Haxorus", "Poison", 535, 85, 90, 80, 70, 80, 130)
         self.Hisuian_Samurott = pokemon.Pokemon("Hisuian Samurott", "Dark", 528, 90, 108, 80, 100, 65, 85)
         self.Aggron = pokemon.Pokemon("Aggron", "Steel", 530, 70, 110, 180, 60, 60, 50)
         self.Florges = pokemon.Pokemon("Florges", "Fairy", 552, 78, 65, 68, 112, 154, 75)
 
-        self.Salamence = pokemon.Pokemon("Salamence", "Dragon", 600, 95, 135, 80, 110, 80, 100)
+        self.Salamence = pokemon.Pokemon("Salamence", "Dragon", 600, 95, 135, 80, 110, 80, 100, "Outrage", "Aerial_Ace")
         self.Kommo_o = pokemon.Pokemon("Kommo o", "Fighting", 600, 75, 110, 125, 100, 105, 85)
         self.Dragapult = pokemon.Pokemon("Dragapult", "Ghost", 600, 88, 120, 75, 100, 75, 142)
-        self.Garchomp = pokemon.Pokemon("Garchomp", "Ground", 600, 108, 130, 95, 80, 85, 102)
-        self.Tyranitar = pokemon.Pokemon("Tyranitar", "Rock", 600, 100, 134, 110, 95, 100, 61)
-        self.Dragonite = pokemon.Pokemon("Dragonite", "Flying", 600, 91, 134, 95, 100, 100, 80)
-        self.Metagross = pokemon.Pokemon("Metagross", "Steel", 600, 80, 135, 130, 95, 90, 70)
+        self.Garchomp = pokemon.Pokemon("Garchomp", "Ground", 600, 108, 130, 95, 80, 85, 102, "Psycho_Boost")
+        self.Tyranitar = pokemon.Pokemon("Tyranitar", "Rock", 600, 100, 134, 110, 95, 100, 61, "Power_Gem", "Foul_Play")
+        self.Dragonite = pokemon.Pokemon("Dragonite", "Flying", 600, 91, 134, 95, 100, 100, 80, "Outrage", "Hurricane")
+        self.Metagross = pokemon.Pokemon("Metagross", "Steel", 600, 80, 135, 130, 95, 90, 70, "Psycho_Boost", "Sunsteel_Strike")
         self.Baxcalibur = pokemon.Pokemon("Baxcalibur", "Ice", 600, 115, 145, 92, 75, 86, 87)
         self.Goodra = pokemon.Pokemon("Goodra", "Dragon", 600, 90, 100, 70, 110, 150, 80)
         self.Gods_Pikachu = pokemon.Pokemon("God's Pikachu", "Electric", 710, 30, 140, 110, 140, 110, 180)
@@ -83,13 +78,13 @@ class Game:
             self.pokemon_chosen_1 = random.sample(self.pokemon_group, 6)
         for i in range(len(self.pokemon_chosen_1)):
             x = self.pokemon_chosen_1[i]
-            self.draw_text(x.name + "  " + x.type, 22, WHITE, WIDTH / 4, HEIGHT / 4 + i * 20 + 40)
+            self.draw_text(x.name + "  " + x.type, 22, papaya_whip, WIDTH / 4, HEIGHT / 4 + i * 20 + 40)
         pygame.display.flip()
         self.wait_for_key()
         self.pokemon_chosen_2 = random.sample(self.pokemon_group, 6)
         for i in range(len(self.pokemon_chosen_2)):
             x = self.pokemon_chosen_2[i]
-            self.draw_text(x.name + "  " + x.type, 22, WHITE, WIDTH * 3 / 4, HEIGHT / 4 + i * 20 + 40)
+            self.draw_text(x.name + "  " + x.type, 22, papaya_whip, WIDTH * 3 / 4, HEIGHT / 4 + i * 20 + 40)
         pygame.display.flip()
         self.wait_for_key()
         self.all_sprites = pygame.sprite.Group()
@@ -123,7 +118,7 @@ class Game:
 
     def draw(self):
         # Game Loop - draw
-        self.screen.fill(BLACK)
+        self.screen.fill(black)
         self.all_sprites.draw(self.screen)
         # *after* drawing everything, flip the display
         pygame.display.flip()
@@ -131,10 +126,10 @@ class Game:
     def show_start_screen(self):
         # game splash/start screen
         self.screen.fill(BG_COLOR)
-        self.draw_text(TITLE, 48, WHITE, WIDTH / 2, HEIGHT / 4)
-        self.draw_text("Battle with Pokemon", 22, WHITE, WIDTH / 2, HEIGHT / 2)
-        self.draw_text("Controls are", 22, WHITE, WIDTH / 2, HEIGHT * 3 / 4)
-        self.draw_text("Press a key to play", 22, WHITE, WIDTH / 2, 15)
+        self.draw_text(TITLE, 48, papaya_whip, WIDTH / 2, HEIGHT / 4)
+        self.draw_text("Battle with Pokemon", 22, papaya_whip, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("Controls are", 22, papaya_whip, WIDTH / 2, HEIGHT * 3 / 4)
+        self.draw_text("Press a key to play", 22, papaya_whip, WIDTH / 2, 15)
         pygame.display.flip()
         self.wait_for_key()
 
@@ -143,9 +138,9 @@ class Game:
         if not self.running:
             return
         self.screen.fill(BG_COLOR)
-        self.draw_text("GAME OVER", 48, WHITE, WIDTH / 2, HEIGHT / 4)
-        self.draw_text("The Battle is over", 22, WHITE, WIDTH / 2, HEIGHT / 2)
-        self.draw_text("Press a key to play again", 22, WHITE, WIDTH / 2, HEIGHT * 3 / 4)
+        self.draw_text("GAME OVER", 48, papaya_whip, WIDTH / 2, HEIGHT / 4)
+        self.draw_text("The Battle is over", 22, papaya_whip, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("Press a key to play again", 22, papaya_whip, WIDTH / 2, HEIGHT * 3 / 4)
         pygame.display.flip()
         self.wait_for_key()
 
