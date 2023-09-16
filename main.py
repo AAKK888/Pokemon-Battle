@@ -182,3 +182,4 @@ while g.running:
     g.show_go_screen()
 
 pygame.quit()
+
