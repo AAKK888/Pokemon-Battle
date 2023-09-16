@@ -24,7 +24,7 @@ class Pokemon:
             atk_type = "Normal"
             base = 100
 
-        modifier = round(random.uniform(0.75, 0.9), 2)
+        modifier = round(random.uniform(0.5, 0.7), 2)
         damage_done = ((0.84 * self.attack / oppo_defence * base + 2) * modifier)
         truefalse = (
             True, False, False, False, False, False, False, False, False, False, False, False, False, False, False,
@@ -41,61 +41,82 @@ class Pokemon:
                 atk_type = "Normal"
                 base = 120
             elif self.attack_1 == "Blast_Burn":
-                atk_type = "Normal"
+                atk_type = "Fire"
                 base = 150
             elif self.attack_1 == "Water_Shuriken":
-                atk_type = "Normal"
+                atk_type = "Water"
                 base = 110
             elif self.attack_1 == "Thunder":
-                atk_type = "Normal"
+                atk_type = "Electric"
                 base = 110
             elif self.attack_1 == "Leaf_Storm":
-                atk_type = "Normal"
+                atk_type = "Grass"
                 base = 120
             elif self.attack_1 == "Blizzard":
-                atk_type = "Normal"
+                atk_type = "Ice"
                 base = 120
             elif self.attack_1 == "Flash_Cannon":
-                atk_type = "Normal"
+                atk_type = "Steel"
                 base = 100
             elif self.attack_1 == "Sludge_Bomb":
-                atk_type = "Normal"
+                atk_type = "Poison"
                 base = 110
             elif self.attack_1 == "Earth_Power":
-                atk_type = "Normal"
+                atk_type = "Ground"
                 base = 100
             elif self.attack_1 == "Hurricane":
-                atk_type = "Normal"
+                atk_type = "Flying"
                 base = 120
             elif self.attack_1 == "Dazzling_Gleam":
-                atk_type = "Normal"
+                atk_type = "Fairy"
                 base = 120
             elif self.attack_1 == "Gust":
-                atk_type = "Normal"
+                atk_type = "Flying"
                 base = 40
             elif self.attack_1 == "Foul_Play":
-                atk_type = "Normal"
+                atk_type = "Dark"
                 base = 95
             elif self.attack_1 == "Aerial_Ace":
-                atk_type = "Normal"
+                atk_type = "Flying"
                 base = 85
             elif self.attack_1 == "Sunsteel_Strike":
-                atk_type = "Normal"
+                atk_type = "Steel"
                 base = 120
             elif self.attack_1 == "Dragon_Energy":
-                atk_type = "Normal"
+                atk_type = "Dragon"
                 base = 150
             elif self.attack_1 == "Tri_Attack":
                 atk_type = "Normal"
                 base = 110
             elif self.attack_1 == "Draco_Meteor":
-                atk_type = "Normal"
+                atk_type = "Dragon"
                 base = 110
             elif self.attack_1 == "Clangorous_Soulblaze":
                 atk_type = "Normal"
                 base = 100
+            elif self.attack_1 == "Phantom Force":
+                atk_type = "Ghost"
+                base == 90
+            elif self.attack_1 == "Ice Beam":
+                atk_type = "Ice"
+                base == 100
+            elif self.attack_1 == "Dragon Pulse" :
+                atk_type = "Dragon"
+                base== 90
+            elif self.attack_1 == "Castropika" :
+                atk_type = "Lightning "
+                base == 210
+            elif self.attack_1 == "10,000,000 Volt Thunderbolt" :
+                atk_type = "Lightning"
+                base == 420
+            elif self.attack_1 == "Poltergeist" :
+                atk_type = "Ghost"
+                base == 100
+            elif self.attack_1 == "" :
+                atk_type = ""
+                base ==
 
-        modifier = round(random.uniform(0.5, 0.75), 2)
+        modifier = round(random.uniform(0.75, 0.9), 2)
         damage_done = ((0.84 * self.sp_attack / oppo_sp_defence * base + 2) * modifier)
         truefalse = (
             True, False, False, False, False, False, False, False, False, False, False, False, False, False, False,
@@ -231,4 +252,3 @@ class Pokemon:
                 damage_done /= 2
 
         return damage_done
-
