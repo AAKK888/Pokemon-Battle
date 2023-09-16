@@ -95,7 +95,7 @@ class Pokemon:
                 atk_type = "Normal"
                 base = 100
 
-        modifier = round(random.uniform(0.75, 0.9), 2)
+        modifier = round(random.uniform(0.5, 0.75), 2)
         damage_done = ((0.84 * self.sp_attack / oppo_sp_defence * base + 2) * modifier)
         truefalse = (
             True, False, False, False, False, False, False, False, False, False, False, False, False, False, False,
