@@ -101,11 +101,33 @@ class Game:
             self.draw()
 
     def update(self):
-        self.pokemon_out_1 = self.pokemon_chosen_1[0]
-        self.pokemon_out_2 = self.pokemon_chosen_2[0]
-        if self.pokemon_out_1.speed > self.pokemon_out_2:
-            pass
-        self.all_sprites.update()
+         pokemon_1 = self.pokemon_chosen_1[0]
+    pokemon_2 = self.pokemon_chosen_2[0]
+
+    # Determine which Pokémon attacks first based on speed
+    if pokemon_1.speed >= pokemon_2.speed:
+        attacker = pokemon_1
+        defender = pokemon_2
+    else:
+        attacker = pokemon_2
+        defender = pokemon_1
+
+    # Execute an attack from the attacker Pokémon to the defender Pokémon
+    damage_dealt = attacker.attack(defender.defense, base_attack_value, defender.type, attacker.attack_1)
+    defender.lose_health(damage_dealt)
+
+    # Check if the defender Pokémon is knocked out
+    if defender.is_knocked_out:
+        # Remove the knocked-out Pokémon from the battle
+        if defender in self.pokemon_chosen_1:
+            self.pokemon_chosen_1.remove(defender)
+        else:
+            self.pokemon_chosen_2.remove(defender)
+
+    # Check if the battle is over (e.g., all Pokémon on one side are knocked out)
+    if not self.pokemon_chosen_1 or not self.pokemon_chosen_2:
+        # Perform actions for the end of the battle (display winner, end game, etc.)
+        self.show_go_screen()
 
     def events(self):
         # Game Loop - events
