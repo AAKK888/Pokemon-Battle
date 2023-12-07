@@ -1,5 +1,6 @@
 import random
 
+
 class Pokemon:
     def __init__(self, name, type, total, hp, attack, defense, sp_attack, sp_defense, speed, attack_1, sp_attack_1):
         self.sp_attack = sp_attack
@@ -16,8 +17,9 @@ class Pokemon:
         self.attack_1 = attack_1
         self.sp_attack_1 = sp_attack_1
 
-    def attack(self, oppo_defence, base, oppo_type, a):
+    def attack(self, oppo_defence, oppo_type):
         atk_type = "Normal"
+        base = 0
         if self.attack_1 == "Double_Edge":
             atk_type = "Normal"
             base = 100
