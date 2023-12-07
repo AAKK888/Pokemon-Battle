@@ -184,7 +184,27 @@ class Game:
         text_rect.midtop = (x, y)
         self.screen.blit(text_surface, text_rect)
 
-    def button(self, position, text):
+    def draw_attack_menu(self, pokemon):
+        # Display attack selection menu for the given Pokémon
+        self.screen.fill(BG_COLOR)
+        self.draw_text("Select an attack for " + pokemon.name, 24, papaya_whip, WIDTH / 2, HEIGHT / 4)
+        
+        # Display the available attacks (placeholder positions for two more attacks)
+        self.draw_text("1. " + pokemon.attack_1, 20, papaya_whip, WIDTH / 2, HEIGHT / 2)
+        self.draw_text("2. " + pokemon.attack_2, 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 30)
+        
+        # Placeholder spots for two more attacks (empty text for now)
+        self.draw_text("3. ", 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 60)
+        self.draw_text("4. ", 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 90)
+        
+        pygame.display.flip()
+
+    def get_player_attack_choice(self):
+        # Placeholder function to simulate player's attack choice (returns 1 or 2 for now)
+        # You can replace this function with actual user input or UI interactions
+        return random.choice([1, 2])
+           
+       def button(self, position, text):
         font = pygame.font.SysFont("Arial", 50)
         text_render = font.render(text, 1, (255, 0, 0))
         x, y, w, h = text_render.get_rect()
