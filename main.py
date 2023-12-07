@@ -2,6 +2,7 @@ import pygame
 import random
 import pokemon
 from var import *
+
 logo = "                                  ,'\ \n" \
        "    _.----.        ____         ,'  _\   ___    ___     ____\n" \
        "_,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.\n" \
@@ -42,17 +43,23 @@ class Game:
         self.draw_text("These are your teams", 40, papaya_whip, WIDTH / 2, HEIGHT / 4)
         self.Snorlax = pokemon.Pokemon("Snorlax", "Normal", 540, 160, 110, 65, 65, 110, 30, "Double_Edge", "Hyper_Beam")
         self.Charzard = pokemon.Pokemon("Charzard", "Fire", 534, 78, 84, 78, 109, 85, 100, "Fly", "Blast_Burn")
-        self.Greninja = pokemon.Pokemon("Greninja", "Water", 530, 72, 123, 67, 95, 85, 95, "Night_Slash", "Water_Shuriken")
-        self.Electivire = pokemon.Pokemon("Electivire", "Electric", 540, 75, 123, 67, 95, 85, 95, "Iron_Tail", "Thunder")
+        self.Greninja = pokemon.Pokemon("Greninja", "Water", 530, 72, 123, 67, 95, 85, 95, "Night_Slash",
+                                        "Water_Shuriken")
+        self.Electivire = pokemon.Pokemon("Electivire", "Electric", 540, 75, 123, 67, 95, 85, 95, "Iron_Tail",
+                                          "Thunder")
         self.Sceptile = pokemon.Pokemon("Sceptile", "Grass", 530, 70, 85, 65, 105, 85, 120, "Leaf_Blade", "Leaf_Storm")
         self.Lapras = pokemon.Pokemon("Lapras", "Ice", 535, 130, 85, 80, 85, 95, 60, "Waterfall", "Blizzard")
-        self.Lucario = pokemon.Pokemon("Lucario", "Fighting", 525, 70, 110, 70, 115, 70, 90, "Close_Combat", "Flash_Cannon")
+        self.Lucario = pokemon.Pokemon("Lucario", "Fighting", 525, 70, 110, 70, 115, 70, 90, "Close_Combat",
+                                       "Flash_Cannon")
         self.Crobat = pokemon.Pokemon("Crobat", "Poison", 535, 85, 90, 80, 70, 80, 130, "Fly", "Sludge_Bomb")
-        self.Rhyperior = pokemon.Pokemon("Rhyperior", "Ground", 535, 115, 140, 130, 55, 55, 40, "Stone_Edge", "Earth_Power")
+        self.Rhyperior = pokemon.Pokemon("Rhyperior", "Ground", 535, 115, 140, 130, 55, 55, 40, "Stone_Edge",
+                                         "Earth_Power")
         self.Gyarados = pokemon.Pokemon("Gyarados", "Flying", 540, 95, 125, 79, 60, 100, 81, "Aqua_Tail", "Hurricane")
-        self.Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", 528, 68, 65, 65, 125, 115, 90, "Zenn_Headbutt", "Dazzling_Gleam")
+        self.Gardevoir = pokemon.Pokemon("Gardevoir", "Psychic", 528, 68, 65, 65, 125, 115, 90, "Zenn_Headbutt",
+                                         "Dazzling_Gleam")
         self.Yanmega = pokemon.Pokemon("Yanmega", "Bug", 515, 86, 76, 86, 116, 56, 95, "Bug_Bite", "Gust")
-        self.Probropass = pokemon.Pokemon("Probropass", "Rock", 525, 60, 55, 145, 75, 150, 40, "Stone_Edge", "Flash_Cannon")
+        self.Probropass = pokemon.Pokemon("Probropass", "Rock", 525, 60, 55, 145, 75, 150, 40, "Stone_Edge",
+                                          "Flash_Cannon")
         self.Dusknoir = pokemon.Pokemon("Dusknoir", "Ghost", 525, 45, 100, 135, 65, 135, 45)
         self.Haxorus = pokemon.Pokemon("Haxorus", "Poison", 535, 85, 90, 80, 70, 80, 130)
         self.Hisuian_Samurott = pokemon.Pokemon("Hisuian Samurott", "Dark", 528, 90, 108, 80, 100, 65, 85)
@@ -60,16 +67,26 @@ class Game:
         self.Florges = pokemon.Pokemon("Florges", "Fairy", 552, 78, 65, 68, 112, 154, 75)
 
         self.Salamence = pokemon.Pokemon("Salamence", "Dragon", 600, 95, 135, 80, 110, 80, 100, "Outrage", "Aerial_Ace")
-        self.Kommo_o = pokemon.Pokemon("Kommo o", "Fighting", 600, 75, 110, 125, 100, 105, 85, "Close_Combat", "Clangorous")
-        self.Dragapult = pokemon.Pokemon("Dragapult", "Ghost", 600, 88, 120, 75, 100, 75, 142, "Phantom_Force", "Draco_Meteor")
-        self.Garchomp = pokemon.Pokemon("Garchomp", "Ground", 600, 108, 130, 95, 80, 85, 102, "Headlong_Rush", "Dragon_Energy")
+        self.Kommo_o = pokemon.Pokemon("Kommo o", "Fighting", 600, 75, 110, 125, 100, 105, 85, "Close_Combat",
+                                       "Clangorous")
+        self.Dragapult = pokemon.Pokemon("Dragapult", "Ghost", 600, 88, 120, 75, 100, 75, 142, "Phantom_Force",
+                                         "Draco_Meteor")
+        self.Garchomp = pokemon.Pokemon("Garchomp", "Ground", 600, 108, 130, 95, 80, 85, 102, "Headlong_Rush",
+                                        "Dragon_Energy")
         self.Tyranitar = pokemon.Pokemon("Tyranitar", "Rock", 600, 100, 134, 110, 95, 100, 61, "Power_Gem", "Foul_Play")
         self.Dragonite = pokemon.Pokemon("Dragonite", "Flying", 600, 91, 134, 95, 100, 100, 80, "Outrage", "Hurricane")
-        self.Metagross = pokemon.Pokemon("Metagross", "Steel", 600, 80, 135, 130, 95, 90, 70, "Psycho_Boost", "Sunsteel_Strike")
-        self.Baxcalibur = pokemon.Pokemon("Baxcalibur", "Ice", 600, 115, 145, 92, 75, 86, 87, "Ice_Beam", "Dragon_Pulse")
+        self.Metagross = pokemon.Pokemon("Metagross", "Steel", 600, 80, 135, 130, 95, 90, 70, "Psycho_Boost",
+                                         "Sunsteel_Strike")
+        self.Baxcalibur = pokemon.Pokemon("Baxcalibur", "Ice", 600, 115, 145, 92, 75, 86, 87, "Ice_Beam",
+                                          "Dragon_Pulse")
         self.Goodra = pokemon.Pokemon("Goodra", "Dragon", 600, 90, 100, 70, 110, 150, 80, "Dragon_Rush", "Draco_Meteor")
-        self.Gods_Pikachu = pokemon.Pokemon("God's Pikachu", "Electric", 710, 30, 140, 110, 140, 110, 18, "Catastropika", "10,000,000 Volt Thunderbolt")
-        self.pokemon_group = (self.Goodra, self.Baxcalibur, self.Dragapult, self.Kommo_o, self.Salamence, self.Aggron, self.Probropass, self.Haxorus, self.Snorlax, self.Charzard, self.Greninja, self.Electivire, self.Sceptile, self.Lapras, self.Lucario, self.Crobat, self.Garchomp, self.Gyarados, self.Gardevoir, self.Yanmega, self.Tyranitar, self.Dusknoir, self.Dragonite, self.Hisuian_Samurott, self.Metagross, self.Florges, self.Rhyperior)
+        self.Gods_Pikachu = pokemon.Pokemon("God's Pikachu", "Electric", 710, 30, 140, 110, 140, 110, 18,
+                                            "Catastropika", "10,000,000 Volt Thunderbolt")
+        self.pokemon_group = (
+        self.Goodra, self.Baxcalibur, self.Dragapult, self.Kommo_o, self.Salamence, self.Aggron, self.Probropass,
+        self.Haxorus, self.Snorlax, self.Charzard, self.Greninja, self.Electivire, self.Sceptile, self.Lapras,
+        self.Lucario, self.Crobat, self.Garchomp, self.Gyarados, self.Gardevoir, self.Yanmega, self.Tyranitar,
+        self.Dusknoir, self.Dragonite, self.Hisuian_Samurott, self.Metagross, self.Florges, self.Rhyperior)
         r = random.randint(0, 60)
         if r == 12:
             self.pokemon_chosen_1 = random.sample(self.pokemon_group, 5)
@@ -101,33 +118,34 @@ class Game:
             self.draw()
 
     def update(self):
-         pokemon_1 = self.pokemon_chosen_1[0]
-    pokemon_2 = self.pokemon_chosen_2[0]
+        pokemon_1 = self.pokemon_chosen_1[0]
 
-    # Determine which Pokémon attacks first based on speed
-    if pokemon_1.speed >= pokemon_2.speed:
-        attacker = pokemon_1
-        defender = pokemon_2
-    else:
-        attacker = pokemon_2
-        defender = pokemon_1
+        pokemon_2 = self.pokemon_chosen_2[0]
 
-    # Execute an attack from the attacker Pokémon to the defender Pokémon
-    damage_dealt = attacker.attack(defender.defense, base_attack_value, defender.type, attacker.attack_1)
-    defender.lose_health(damage_dealt)
-
-    # Check if the defender Pokémon is knocked out
-    if defender.is_knocked_out:
-        # Remove the knocked-out Pokémon from the battle
-        if defender in self.pokemon_chosen_1:
-            self.pokemon_chosen_1.remove(defender)
+        # Determine which Pokémon attacks first based on speed
+        if pokemon_1.speed >= pokemon_2.speed:
+            attacker = pokemon_1
+            defender = pokemon_2
         else:
-            self.pokemon_chosen_2.remove(defender)
+            attacker = pokemon_2
+            defender = pokemon_1
 
-    # Check if the battle is over (e.g., all Pokémon on one side are knocked out)
-    if not self.pokemon_chosen_1 or not self.pokemon_chosen_2:
-        # Perform actions for the end of the battle (display winner, end game, etc.)
-        self.show_go_screen()
+        # Execute an attack from the attacker Pokémon to the defender Pokémon
+        damage_dealt = attacker.attack(defender.defense, defender.type, attacker.attack_1)
+        defender.lose_health(damage_dealt)
+
+        # Check if the defender Pokémon is knocked out
+        if defender.is_knocked_out:
+            # Remove the knocked-out Pokémon from the battle
+            if defender in self.pokemon_chosen_1:
+                self.pokemon_chosen_1.remove(defender)
+            else:
+                self.pokemon_chosen_2.remove(defender)
+
+        # Check if the battle is over (e.g., all Pokémon on one side are knocked out)
+        if not self.pokemon_chosen_1 or not self.pokemon_chosen_2:
+            # Perform actions for the end of the battle (display winner, end game, etc.)
+            self.show_go_screen()
 
     def events(self):
         # Game Loop - events
@@ -188,23 +206,23 @@ class Game:
         # Display attack selection menu for the given Pokémon
         self.screen.fill(BG_COLOR)
         self.draw_text("Select an attack for " + pokemon.name, 24, papaya_whip, WIDTH / 2, HEIGHT / 4)
-        
+
         # Display the available attacks (placeholder positions for two more attacks)
         self.draw_text("1. " + pokemon.attack_1, 20, papaya_whip, WIDTH / 2, HEIGHT / 2)
         self.draw_text("2. " + pokemon.attack_2, 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 30)
-        
+
         # Placeholder spots for two more attacks (empty text for now)
         self.draw_text("3. ", 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 60)
         self.draw_text("4. ", 20, papaya_whip, WIDTH / 2, HEIGHT / 2 + 90)
-        
+
         pygame.display.flip()
 
     def get_player_attack_choice(self):
         # Placeholder function to simulate player's attack choice (returns 1 or 2 for now)
         # You can replace this function with actual user input or UI interactions
         return random.choice([1, 2])
-           
-       def button(self, position, text):
+
+    def button(self, position, text):
         font = pygame.font.SysFont("Arial", 50)
         text_render = font.render(text, 1, (255, 0, 0))
         x, y, w, h = text_render.get_rect()
@@ -224,4 +242,3 @@ while g.running:
     g.show_go_screen()
 
 pygame.quit()
-
