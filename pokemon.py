@@ -1,12 +1,10 @@
 import random
 
-
 class Pokemon:
-
     def __init__(self, name, type, total, hp, attack, defense, sp_attack, sp_defense, speed, attack_1, sp_attack_1):
         self.sp_attack = sp_attack
         self.total = total
-        self.sp_defence = sp_defense
+        self.sp_defense = sp_defense
         self.speed = speed
         self.attack = attack
         self.defense = defense
@@ -43,78 +41,7 @@ class Pokemon:
             elif self.attack_1 == "Blast_Burn":
                 atk_type = "Fire"
                 base = 150
-            elif self.attack_1 == "Water_Shuriken":
-                atk_type = "Water"
-                base = 110
-            elif self.attack_1 == "Thunder":
-                atk_type = "Electric"
-                base = 110
-            elif self.attack_1 == "Leaf_Storm":
-                atk_type = "Grass"
-                base = 120
-            elif self.attack_1 == "Blizzard":
-                atk_type = "Ice"
-                base = 120
-            elif self.attack_1 == "Flash_Cannon":
-                atk_type = "Steel"
-                base = 100
-            elif self.attack_1 == "Sludge_Bomb":
-                atk_type = "Poison"
-                base = 110
-            elif self.attack_1 == "Earth_Power":
-                atk_type = "Ground"
-                base = 100
-            elif self.attack_1 == "Hurricane":
-                atk_type = "Flying"
-                base = 120
-            elif self.attack_1 == "Dazzling_Gleam":
-                atk_type = "Fairy"
-                base = 120
-            elif self.attack_1 == "Gust":
-                atk_type = "Flying"
-                base = 40
-            elif self.attack_1 == "Foul_Play":
-                atk_type = "Dark"
-                base = 95
-            elif self.attack_1 == "Aerial_Ace":
-                atk_type = "Flying"
-                base = 85
-            elif self.attack_1 == "Sunsteel_Strike":
-                atk_type = "Steel"
-                base = 120
-            elif self.attack_1 == "Dragon_Energy":
-                atk_type = "Dragon"
-                base = 150
-            elif self.attack_1 == "Tri_Attack":
-                atk_type = "Normal"
-                base = 110
-            elif self.attack_1 == "Draco_Meteor":
-                atk_type = "Dragon"
-                base = 110
-            elif self.attack_1 == "Clangorous_Soulblaze":
-                atk_type = "Normal"
-                base = 100
-            elif self.attack_1 == "Phantom Force":
-                atk_type = "Ghost"
-                base == 90
-            elif self.attack_1 == "Ice Beam":
-                atk_type = "Ice"
-                base == 100
-            elif self.attack_1 == "Dragon Pulse" :
-                atk_type = "Dragon"
-                base== 90
-            elif self.attack_1 == "Castropika" :
-                atk_type = "Lightning "
-                base == 210
-            elif self.attack_1 == "10,000,000 Volt Thunderbolt" :
-                atk_type = "Lightning"
-                base == 420
-            elif self.attack_1 == "Poltergeist" :
-                atk_type = "Ghost"
-                base == 100
-            elif self.attack_1 == "" :
-                atk_type = ""
-                base ==
+            # Add more special attacks and their types and base damage
 
         modifier = round(random.uniform(0.75, 0.9), 2)
         damage_done = ((0.84 * self.sp_attack / oppo_sp_defence * base + 2) * modifier)
@@ -136,119 +63,40 @@ class Pokemon:
 
     def knock_out(self):
         self.is_knocked_out = True
-        print(self.name + "is knocked out")
+        print(self.name + " is knocked out")
 
     def calculate_damage(self, atk_type, damage_done, oppo_type):
-        if atk_type == "Normal":
-            if oppo_type == "Rock":
-                damage_done /= 2
-            if oppo_type == "Ghost":
-                damage_done = 0
-            if oppo_type == "Steel":
-                damage_done /= 2
-        elif atk_type == "Fire":
-            if oppo_type == "Fire":
-                damage_done /= 2
-            if oppo_type == "Water":
-                damage_done /= 2
-            if oppo_type == "Grass":
-                damage_done *= 2
-            if oppo_type == "Ice":
-                damage_done *= 2
-            if oppo_type == "Bug":
-                damage_done *= 2
-            if oppo_type == "Rock":
-                damage_done /= 2
-            if oppo_type == "Dragon":
-                damage_done /= 2
-            if oppo_type == "Steel":
-                damage_done *= 2
-        elif atk_type == "Water":
-            if oppo_type == "Fire":
-                damage_done *= 2
-            if oppo_type == "Water":
-                damage_done /= 2
-            if oppo_type == "Grass":
-                damage_done /= 2
-            if oppo_type == "Ground":
-                damage_done *= 2
-            if oppo_type == "Rock":
-                damage_done *= 2
-            if oppo_type == "Dragon":
-                damage_done /= 2
-        elif atk_type == "Electric":
-            if oppo_type == "Water":
-                damage_done *= 2
-            if oppo_type == "Electric":
-                damage_done /= 2
-            if oppo_type == "Grass":
-                damage_done /= 2
-            if oppo_type == "Ground":
-                damage_done = 0
-            if oppo_type == "Flying":
-                damage_done *= 2
-            if oppo_type == "Dragon":
-                damage_done /= 2
-        elif atk_type == "Grass":
-            if oppo_type == "Fire":
-                damage_done /= 2
-            if oppo_type == "Water":
-                damage_done *= 2
-            if oppo_type == "Grass":
-                damage_done /= 2
-            if oppo_type == "Poison":
-                damage_done /= 2
-            if oppo_type == "Ground":
-                damage_done *= 2
-            if oppo_type == "Flying":
-                damage_done /= 2
-            if oppo_type == "Bug":
-                damage_done /= 2
-            if oppo_type == "Rock":
-                damage_done *= 2
-            if oppo_type == "Dragon":
-                damage_done /= 2
-            if oppo_type == "Steel":
-                damage_done /= 2
-        elif atk_type == "Ice":
-            if oppo_type == "Fire":
-                damage_done /= 2
-            if oppo_type == "Water":
-                damage_done /= 2
-            if oppo_type == "Grass":
-                damage_done *= 2
-            if oppo_type == "Ice":
-                damage_done /= 2
-            if oppo_type == "Ground":
-                damage_done *= 2
-            if oppo_type == "Flying":
-                damage_done *= 2
-            if oppo_type == "Dragon":
-                damage_done *= 2
-            if oppo_type == "Steel":
-                damage_done /= 2
-        elif atk_type == "Fighting":
-            if oppo_type == "Normal":
-                damage_done *= 2
-            if oppo_type == "Ice":
-                damage_done *= 2
-            if oppo_type == "Poison":
-                damage_done /= 2
-            if oppo_type == "Flying":
-                damage_done /= 2
-            if oppo_type == "Psychic":
-                damage_done /= 2
-            if oppo_type == "Ground":
-                damage_done /= 2
-            if oppo_type == "Rock":
-                damage_done *= 2
-            if oppo_type == "Ghost":
-                damage_done = 0
-            if oppo_type == "Dark":
-                damage_done *= 2
-            if oppo_type == "Steel":
-                damage_done *= 2
-            if oppo_type == "Fairy":
-                damage_done /= 2
+        effectiveness = {
+            "Normal": {"Rock": 0.5, "Ghost": 0, "Steel": 0.5},
+            "Fire": {"Fire": 0.5, "Water": 0.5, "Grass": 2, "Ice": 2, "Bug": 2, "Rock": 0.5, "Dragon": 0.5, "Steel": 2},
+            "Water": {"Fire": 2, "Water": 0.5, "Grass": 0.5, "Ground": 2, "Rock": 2, "Dragon": 0.5},
+            "Electric": {"Water": 2, "Electric": 0.5, "Grass": 0.5, "Ground": 0, "Flying": 2, "Dragon": 0.5},
+            "Grass": {"Fire": 0.5, "Water": 2, "Grass": 0.5, "Poison": 0.5, "Ground": 2, "Flying": 0.5,
+                      "Bug": 0.5, "Rock": 2, "Dragon": 0.5, "Steel": 0.5},
+            "Ice": {"Fire": 0.5, "Water": 0.5, "Grass": 2, "Ice": 0.5, "Ground": 2, "Flying": 2, "Dragon": 2,
+                    "Steel": 0.5},
+            "Fighting": {"Normal": 2, "Ice": 2, "Poison": 0.5, "Flying": 0.5, "Psychic": 0.5, "Bug": 0.5, "Rock": 2,
+                         "Ghost": 0, "Dark": 2, "Steel": 2, "Fairy": 0.5},
+            "Poison": {"Grass": 2, "Poison": 0.5, "Ground": 0.5, "Rock": 0.5, "Ghost": 0.5, "Steel": 0, "Fairy": 2},
+            "Ground": {"Fire": 2, "Electric": 2, "Grass": 0.5, "Poison": 2, "Flying": 0, "Bug": 0.5, "Rock": 2,
+                       "Steel": 2},
+            "Flying": {"Electric": 0.5, "Grass": 2, "Fighting": 2, "Bug": 2, "Rock": 0.5, "Steel": 0.5},
+            "Psychic": {"Fighting": 2, "Poison": 2, "Psychic": 0.5, "Dark": 0, "Steel": 0.5},
+            "Bug": {"Fire": 0.5, "Grass": 2, "Fighting": 0.5, "Flying": 0.5, "Poison": 0.5, "Ghost": 0.5,
+                    "Steel": 0.5, "Fairy": 0.5},
+            "Rock": {"Fire": 2, "Ice": 2, "Fighting": 0.5, "Ground": 0.5, "Flying": 2, "Bug": 2, "Steel": 0.5},
+            "Ghost": {"Normal": 0, "Psychic": 2, "Ghost": 2, "Dark": 0.5},
+            "Dragon": {"Dragon": 2, "Steel": 0.5, "Fairy": 0},
+            "Dark": {"Fighting": 0.5, "Psychic": 2, "Ghost": 2, "Dark": 0.5, "Fairy": 0.5},
+            "Steel": {"Fire": 0.5, "Water": 0.5, "Electric": 0.5, "Ice": 2, "Rock": 2, "Steel": 0.5, "Fairy": 2},
+            "Fairy": {"Fire": 0.5, "Fighting": 2, "Poison": 0.5, "Dragon": 2, "Dark": 2, "Steel": 0.5},
+            # Add more type matchups for remaining types if needed
+        }
 
+        if atk_type in effectiveness and oppo_type in effectiveness[atk_type]:
+            effectiveness_value = effectiveness[atk_type][oppo_type]
+        else:
+            effectiveness_value = 1  # Neutral effectiveness
+
+        damage_done *= effectiveness_value
         return damage_done
