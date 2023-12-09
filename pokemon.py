@@ -17,22 +17,77 @@ class Pokemon:
         self.attack_1 = attack_1
         self.sp_attack_1 = sp_attack_1
 
-    def attack(self, oppo_defence, oppo_type):
-        atk_type = "Normal"
+    atk_type = "Normal"
         base = 0
-        if self.attack_1 == "Double_Edge":
+        modifier = round(random.uniform(0.5, 0.7), 2)
+        damage_done = 0
+
+        if move_name == "Double_Edge":
             atk_type = "Normal"
             base = 100
+        elif move_name == "Fly":
+            atk_type = "Flying"
+            base = 90
+        elif move_name == "Night_Slash":
+            atk_type = "Dark"
+            base = 70
+        elif move_name == "Iron_Tail":
+            atk_type = "Steel"
+            base = 100
+        elif move_name == "Leaf_Blade":
+            atk_type = "Grass"
+            base = 90
+        elif move_name == "Waterfall":
+            atk_type = "Water"
+            base = 80
+        elif move_name == "Close_Combat":
+            atk_type = "Fighting"
+            base = 120
+        elif move_name == "Stone_Edge":
+            atk_type = "Rock"
+            base = 100
+        elif move_name == "Aqua_Tail":
+            atk_type = "Water"
+            base = 90
+        elif move_name == "Zenn_Headbutt":
+            atk_type = "Psychic"
+            base = 80
+        elif move_name == "Bug_Bite":
+            atk_type = "Bug"
+            base = 60
+        elif move_name == "Poltergeist":
+            atk_type = "Ghost"
+            base = 110
+        elif move_name == "Outrage":
+            atk_type = "Dragon"
+            base = 120
+        elif move_name == "Power_Gem":
+            atk_type = "Rock"
+            base = 80
+        elif move_name == "Psycho_Boost":
+            atk_type = "Psychic"
+            base = 140
+        elif move_name == "Headlong_Rush":
+            atk_type = "Rock"
+            base = 100
+        elif move_name == "Dragon_Rush":
+            atk_type = "Dragon"
+            base = 100
+        elif move_name == "Phantom_Force":
+            atk_type = "Ghost"
+            base = 90
+        elif move_name == "Ice_Beam":
+            atk_type = "Ice"
+            base = 90
 
-        modifier = round(random.uniform(0.5, 0.7), 2)
         damage_done = ((0.84 * self.attack / oppo_defence * base + 2) * modifier)
-        truefalse = (
-            True, False, False, False, False, False, False, False, False, False, False, False, False, False, False,
-            False,)
-        chance = random.choice(truefalse)
-        if chance:
-            damage_done *= 1.5
-        self.calculate_damage(atk_type, damage_done, oppo_type)
+        effectiveness = self.calculate_effectiveness(atk_type, oppo_type)
+        damage_done *= effectiveness
+
+        if random.choice([True, False, False]):
+            damage_done *= 1.5  # Critical hit
+
+        self.inflict_damage(damage_done)
 
     def sp_attack(self, oppo_sp_defence, base, oppo_type):
         atk_type = "Normal"
@@ -102,3 +157,10 @@ class Pokemon:
 
         damage_done *= effectiveness_value
         return damage_done
+
+def inflict_damage(self, damage):
+        if damage > self.current_health:
+            self.current_health = 0
+            self.is_knocked_out = True
+        else:
+            self.current_health -= damage
